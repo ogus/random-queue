@@ -1,0 +1,17 @@
+{
+  "name": "random-queue",
+  "version": "1.0.0",
+  "description": "A queue data structure with randomly accessed elements",
+  "scripts": {
+    "build": "terser random-queue.js -c -m reserved=['RandomQueue'] > random-queue.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ogus/random-queue.git"
+  },
+  "author": "Ogus",
+  "license": "ISC",
+  "devDependencies": {
+    "terser": "^3.9.2"
+  }
+}
