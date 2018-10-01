@@ -34,7 +34,7 @@
      * @return {int}
      */
     length: function () {
-      return lastIdxlastIdx
+      return lastIdx
     },
 
     /**
