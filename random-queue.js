@@ -14,9 +14,9 @@
   var lastIdx = 0;
 
   /**
-   * Data structure is used for queued element storage and random element access
+   * Data structure used for queued element storage with random element access
    * @constructor
-   * @param {int} [size] The initial size of the queue
+   * @param {int} [size] The initial size
    */
   function RandomQueue(size) {
     if (!isNaN(parseInt(size))) {
@@ -30,7 +30,7 @@
 
   RandomQueue.prototype = {
     /**
-     * Get the current length of the queue
+     * Get the current length
      * @return {int}
      */
     length: function () {
