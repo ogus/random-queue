@@ -1,59 +1,72 @@
 # Random Queue
 
- A simple Queue data structure with randomly-accessed elements
+A Queue data structure with fast element storage and randomized element access.
 
-## Installation
+This can be useful when you need to queue a set of elements, but the retrieval order does not matter.
 
-Clone this repository and import `random-queue.js` or `random-queue.min.js` in your own project.
-
-This module has no dependencies.
 
 ## Usage
 
-### Create a new queue
-
 ```js
 var storage = new RandomQueue();
-```
 
-### Add elements to the queue
+storage.enqueue(1);
+storage.enqueue(2);
+storage.enqueue("bob");
+storage.enqueue({x: 1, y: 2});
 
- New element are added to the queue one by one :
+storage.isEmpty(); // false
 
-```js
-storage.enqueue(5);
-```
+storage.dequeue(); // could be 1, or "bob" ...
 
-Anything can be stored :
-
-```js
-var data = [1, 2, "bob", {a: 0, b: 1}];
-
-for (var i = 0; i < data.length; i++) {
-  storage.enqueue(data[i]); // store each element
+storage.size(); // 3
 }
 ```
 
-### Get elements from the queue
 
-Elements are returned in a random order :
+## API
 
-```js
-var surprise = storage.dequeue();
+### `new RandomQueue(size)`
+
+Create a new queue, with *optionnal* initial size.
+
+The queue will increase its size automatically if it is necessary.
+
+
+### `RandomQueue.enqueue(element)`
+
+Add a new element to the queue.
+
+The element can be of any type: `Number`, `String`, `Object`, etc.
+
+### `RandomQueue.dequeue()`
+
+Query a random element and remove it from the queue
+
+### `RandomQueue.peek()`
+
+Query a random element from the queue
+
+### `RandomQueue.size()`
+
+Get the current size
+
+### `RandomQueue.isEmpty()`
+
+Check if the queue contains any element
+
+
+## Installation
+
+The module can be installed from `npm`
+
+```sh
+npm install poisson-disk
 ```
 
-### Utility methods
+It can also be installed by cloning the repository & including the `random-queue.js` file in your project.
 
-You can query additionnal informations on the state of the queue :
-
-```js
-var storage = new RandomQueue();
-storage.enqueue(0);
-
-storage.isEmpty();  // return false
-storage.length(); // return 1
-```
 
 ## License
 
-There is currently no license on this code
+This project is licensed under the WTFPL - see [LICENSE](LICENSE) for more details
